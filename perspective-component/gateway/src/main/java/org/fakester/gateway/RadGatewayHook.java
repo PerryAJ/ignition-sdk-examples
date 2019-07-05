@@ -7,8 +7,10 @@ import com.inductiveautomation.ignition.gateway.dataroutes.RouteGroup;
 import com.inductiveautomation.ignition.gateway.model.AbstractGatewayModuleHook;
 import com.inductiveautomation.ignition.gateway.model.GatewayContext;
 import com.inductiveautomation.perspective.gateway.api.PerspectiveContext;
+import com.inductiveautomation.reporting.gateway.api.GatewayDataSourceRegistry;
 import org.fakester.common.RadComponents;
 import org.fakester.common.component.display.Image;
+import org.fakester.gateway.datasource.RestJsonDataSource;
 
 public class RadGatewayHook extends AbstractGatewayModuleHook {
 
@@ -24,6 +26,9 @@ public class RadGatewayHook extends AbstractGatewayModuleHook {
         PerspectiveContext.get(context)
             .getComponentRegistry()
             .registerComponent(Image.DESCRIPTOR);
+
+        GatewayDataSourceRegistry.get(context).register(new RestJsonDataSource());
+
     }
 
     @Override
