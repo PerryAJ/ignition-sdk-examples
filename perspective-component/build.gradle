@@ -17,7 +17,7 @@ buildscript {
     }
 
     ext {
-        sdk_version = "8.0.2"
+        sdk_version = "8.0.4-SNAPSHOT"
     }
 }
 
@@ -45,15 +45,15 @@ allprojects {
         moduleId "org.fakester.radcomponent"
         moduleVersion "${project.version}"
         moduleDescription "A module that adds components to the Perspective module."
-        requiredIgnitionVersion "8.0.1"
+        requiredIgnitionVersion "8.0.4"
         requiredFrameworkVersion "8"
         isFree true
         license "license.html"
         moduleDependencies = [
                 [scope: "G", moduleId: "com.inductiveautomation.perspective"],
                 [scope: "D", moduleId: "com.inductiveautomation.perspective"],
-                [scope: "G", moduleId: "rept"],
-                [scope: "D", moduleId: "rept"]
+                [scope: "G", moduleId: "com.inductiveautomation.reporting"],
+                [scope: "D", moduleId: "com.inductiveautomation.reporting"]
         ]
         // map our projects to the scopes their jars should apply.  Web isn't here because its assets are moved
         // into the gateway resource folder as part of the module's build
